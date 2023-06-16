@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sortable</title>
+    <link rel="stylesheet" href="./sortable.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sora&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="searchWrapper">
+        <input type="text" name="searchBar" id="searchBar" placeholder="Rechercher"/>
+        <label for="research-selector">Choisir sur quels critères rechercher : </label>
+                <select name="research" id="research-selector" onChange="changeSearchBar(this.value);">
+                    <option value="namefullname" selected>Name / Full name</option>
+                    <option value="race">Race</option>
+                    <option value="gender">Gender</option>
+                    <option value="pob">Place of birth</option>
+                    <option value="alignement">Alignement</option>
+                    <option value="all">Tout</option>
+                </select>
+                <select name="research" id="research-selector" onChange="changeSearchBarIE(this.value);">
+                    <option value="include" selected>Include</option>
+                    <option value="exclude">Exclude</option>
+                </select>
+    </div>
+    <ul id="charactersList"></ul>
+    <table id="myTable" cellspacing=2>
+        <thead>
+            <tr>
+                <th colspan="1">Icon</th>
+                <th colspan="1">Name</th>
+                <th colspan="1">Full name</th>
+                <th colspan="1">Powerstats</th>
+                <th colspan="1">Race</th>
+                <th colspan="1">Gender</th>
+                <th colspan="1">Height</th>
+                <th colspan="1">Weight</th>
+                <th colspan="1">Place of birth</th>
+                <th colspan="1">Alignement</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+        <tfoot>
+            <th colspan="10">
+                <label for="heroes-selector">Choisir une quantité de héros à afficher : </label>
+                <select name="heroes" id="heroes-selector" onChange="change(this.value);">
+                    <option value="10">10</option>
+                    <option value="20" selected>20</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                    <option value="1000">Tout</option>
+                </select>
+            </th>
+        </tfoot>
+    </table>
+    <div id="pagination"></div>
+    <div id="pagination2"></div>
+    <div id="popup"></div>
+</body>
+<script src="sortable.js"></script>
+</html>
